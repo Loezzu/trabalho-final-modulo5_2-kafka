@@ -1,5 +1,6 @@
 package com.tindev.tindevapi.controller.personinfo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tindev.tindevapi.dto.personInfo.PersonInfoCreateDTO;
 import com.tindev.tindevapi.dto.personInfo.PersonInfoDTO;
 import com.tindev.tindevapi.service.PersonInfoService;
@@ -29,7 +30,7 @@ public class PersonInfoController implements PersonInfoAPI{
     }
 
     @PostMapping("/create")
-    public ResponseEntity<PersonInfoDTO> create(@RequestBody PersonInfoCreateDTO persoInfoDTO) {
+    public ResponseEntity<PersonInfoDTO> create(@RequestBody PersonInfoCreateDTO persoInfoDTO) throws JsonProcessingException {
         return ResponseEntity.ok(persoInfoService.createPersonInfo(persoInfoDTO));
     }
 

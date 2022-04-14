@@ -1,5 +1,6 @@
 package com.tindev.tindevapi.controller.match;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tindev.tindevapi.dto.match.MatchDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,7 +22,7 @@ public interface MatchAPI {
             @ApiResponse(code = 200, message = "Retorna uma lista de matches"),
             @ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
             @ApiResponse(code = 500, message = "Foi gerada uma exceção"),})
-    ResponseEntity<List<MatchDTO>> list();
+    ResponseEntity<List<MatchDTO>> list() throws JsonProcessingException;
 
     @ApiOperation(value = "Retorna uma lista de matches de um usuário")
     @ApiResponses(value = {

@@ -1,5 +1,6 @@
 package com.tindev.tindevapi.controller.like;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tindev.tindevapi.dto.like.LikeDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,7 +21,7 @@ public interface LikeAPI {
             @ApiResponse(code = 200, message = "Retorna uma lista de todos likes"),
             @ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
             @ApiResponse(code = 500, message = "Foi gerada uma exceção"),})
-    ResponseEntity<List<LikeDTO>> listLikes();
+    ResponseEntity<List<LikeDTO>> listLikes() throws JsonProcessingException;
 
     @ApiOperation(value = "Retorna uma lista likes de um usuário")
     @ApiResponses(value = {

@@ -1,12 +1,13 @@
 package com.tindev.tindevapi;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tindev.tindevapi.dto.personInfo.PersonInfoCreateDTO;
 import com.tindev.tindevapi.dto.personInfo.PersonInfoDTO;
 import com.tindev.tindevapi.entities.PersonInfoEntity;
 import com.tindev.tindevapi.repository.PersonInfoRepository;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.service.LogService;
 import com.tindev.tindevapi.service.PersonInfoService;
 import org.junit.Test;
@@ -48,7 +49,7 @@ public class PersonInfoTest {
     }
 
     @Test
-    public void testCreatePersonInfo() {
+    public void testCreatePersonInfo() throws JsonProcessingException {
         PersonInfoEntity personInfoEntity = PersonInfoEntity.builder().build();
         PersonInfoCreateDTO personInfoCreateDTO = getPersonInfoCreate();
         when(objectMapper.convertValue(personInfoCreateDTO, PersonInfoEntity.class)).thenReturn(personInfoEntity);
@@ -58,7 +59,7 @@ public class PersonInfoTest {
     }
 
     @Test
-    public void testEmailById() throws RegraDeNegocioException {
+    public void testEmailById() throws RegraDeNegocioException, JsonProcessingException {
         PersonInfoEntity personIfoEntity = PersonInfoEntity.builder().build();
         when(personInfoRepository.findById(anyInt())).thenReturn(Optional.ofNullable(personIfoEntity));
         PersonInfoDTO personInfoDTO = getPersonInfoDTO();
@@ -74,7 +75,7 @@ public class PersonInfoTest {
     }
 
     @Test
-    public void testDeletePersonInfo() throws RegraDeNegocioException {
+    public void testDeletePersonInfo() throws RegraDeNegocioException, JsonProcessingException {
         PersonInfoEntity personInfoEntity = PersonInfoEntity.builder().build();
         when(personInfoRepository.findById(anyInt())).thenReturn(Optional.ofNullable(personInfoEntity));
         personInfoService.delete(1);

@@ -1,4 +1,4 @@
-package com.tindev.tindevapi.repository.exceptions;
+package com.tindev.tindevapi.exceptions;
 
 
 import org.springframework.http.HttpHeaders;

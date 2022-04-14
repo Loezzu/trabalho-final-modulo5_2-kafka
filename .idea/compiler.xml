@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="trabalho-final-modulo5_2-kafka" />
         <module name="API-TINDEV" />
         <module name="git_tindevmongodb4" />
         <module name="trabalho-final-modulo4-mongodb" />
@@ -20,6 +21,7 @@
       <module name="git_tindevmongodb4" options="-parameters" />
       <module name="tindev-api" options="-parameters" />
       <module name="trabalho-final-modulo4-mongodb" options="-parameters" />
+      <module name="trabalho-final-modulo5_2-kafka" options="-parameters" />
     </option>
   </component>
 </project>

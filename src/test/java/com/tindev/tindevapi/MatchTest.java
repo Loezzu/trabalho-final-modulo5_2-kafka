@@ -1,16 +1,12 @@
 package com.tindev.tindevapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tindev.tindevapi.dto.user.UserCreateDTO;
 import com.tindev.tindevapi.dto.user.UserDTO;
 import com.tindev.tindevapi.entities.MatchEntity;
 import com.tindev.tindevapi.entities.UserEntity;
-import com.tindev.tindevapi.enums.Gender;
-import com.tindev.tindevapi.enums.Pref;
 import com.tindev.tindevapi.enums.ProgLangs;
 import com.tindev.tindevapi.repository.MatchRepository;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
-import com.tindev.tindevapi.service.LikeService;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.service.LogService;
 import com.tindev.tindevapi.service.MatchService;
 import com.tindev.tindevapi.service.UserService;

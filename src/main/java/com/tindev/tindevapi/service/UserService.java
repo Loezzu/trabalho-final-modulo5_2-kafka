@@ -11,7 +11,7 @@ import com.tindev.tindevapi.entities.RoleEntity;
 import com.tindev.tindevapi.entities.UserEntity;
 import com.tindev.tindevapi.enums.Roles;
 import com.tindev.tindevapi.enums.TipoLog;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.repository.AddressRepository;
 import com.tindev.tindevapi.repository.PersonInfoRepository;
 import com.tindev.tindevapi.repository.RoleRepository;
@@ -48,22 +48,12 @@ public class UserService {
     public List<UserDTO> listUsers(Integer id) throws RegraDeNegocioException, JsonProcessingException {
         if (id != null) {
             UserEntity user = userRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//            logService.logPost(TipoLog.USER,"User "+ user.getUsername() +" found");
-            LogDTO logDTO = new LogDTO();
-            logDTO.setTipoLog(TipoLog.USER);
-            logDTO.setDescricao("User " + user.getUsername() + " found");
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.USER,"User "+ user.getUsername() +" found");
             return userRepository.findById(id).stream().map(userEntity ->
                             objectMapper.convertValue(userEntity, UserDTO.class))
                     .collect(Collectors.toList());
         }
-//        logService.logPost(TipoLog.USER,"User list found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.USER);
-        logDTO.setDescricao("User list found");
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User list found");
         return userRepository.findAll().stream()
                 .map(user -> objectMapper.convertValue(user, UserDTO.class))
                 .collect(Collectors.toList());
@@ -71,12 +61,7 @@ public class UserService {
 
     public UserDTOCompleto getUserLoged() throws RegraDeNegocioException, JsonProcessingException {
         UserEntity userLoged = userRepository.getById(getIdUserLoged());
-//        logService.logPost(TipoLog.USER,"User " +userLoged.getUsername()+ " found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.USER);
-        logDTO.setDescricao("User " +userLoged.getUsername()+ " found");
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +userLoged.getUsername()+ " found");
         return getUserComplete(userLoged);
     }
 
@@ -89,12 +74,8 @@ public class UserService {
         userEntity.setRole(roleRepository.findById(role.getRole()).orElseThrow(() -> new RegraDeNegocioException("Role not found!")));
 
         userRepository.save(userEntity);
-//        logService.logPost(TipoLog.USER,"User "+ userEntity.getUsername() +" created");
+        logService.logPost(TipoLog.USER,"User "+ userEntity.getUsername() +" created");
         LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User "+ userEntity.getUsername() +" created");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
         return objectMapper.convertValue(userCreateDTO, UserDTOWithoutPassword.class);
     }
 
@@ -105,12 +86,7 @@ public class UserService {
         userEntity.setUsername(userUpdated.getUsername());
         userEntity.setProgLangs(userUpdated.getProgLangs());
         userEntity.setPref(userUpdated.getPref());
-//        logService.logPost(TipoLog.USER,"User "+userEntity.getUsername()+  " updated");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User "+userEntity.getUsername()+  " updated");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User "+userEntity.getUsername()+  " updated");
         userRepository.save(userEntity);
     }
 
@@ -122,102 +98,57 @@ public class UserService {
         userEntity.setUsername(userUpdated.getUsername());
         userEntity.setProgLangs(userUpdated.getProgLangs());
         userEntity.setPref(userUpdated.getPref());
-//        logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " logged updated");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +userEntity.getUsername()+ " logged updated");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " logged updated");
         userRepository.save(userEntity);
     }
 
     public void deleteUser(Integer id) throws RegraDeNegocioException, JsonProcessingException {
        UserEntity userEntity =  userRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " deleted");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +userEntity.getUsername()+ " deleted");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " deleted");
         userRepository.deleteById(id);
     }
 
     public UserDTO getUserById(Integer id) throws RegraDeNegocioException, JsonProcessingException {
        UserEntity userEntity = userRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +userEntity.getUsername()+ " found");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " found");
         return objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false).convertValue((userRepository.findById(id)), UserDTO.class);
     }
 
     public List<UserDTOWithoutPassword> listLikesOfTheLogedUser() throws RegraDeNegocioException, JsonProcessingException {
        UserEntity user = userRepository.findById(getIdUserLoged()).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +user.getUsername()+ " found");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
         return userRepository.listLikesById(getIdUserLoged()).stream()
                 .map(userEntity -> objectMapper.convertValue(userEntity, UserDTOWithoutPassword.class)).toList();
     }
 
     public List<UserDTOWithoutPassword> listReceivedLikesOfTheLogedUser() throws RegraDeNegocioException, JsonProcessingException {
         UserEntity user = userRepository.findById(getIdUserLoged()).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +user.getUsername()+ " found");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
         return userRepository.listReceivedLikesById(getIdUserLoged()).stream()
                 .map(userEntity -> objectMapper.convertValue(userEntity, UserDTOWithoutPassword.class)).toList();
     }
 
     public List<UserDTOCompleto> listUserDTOComplete(Integer id) throws RegraDeNegocioException, JsonProcessingException {
         if (id == null) {
-//            logService.logPost(TipoLog.USER, "List of users found");
-            LogDTO logDTO = new LogDTO();
-            logDTO.setDescricao("List of users found");
-            logDTO.setTipoLog(TipoLog.USER);
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.USER, "List of users found");
             return new ArrayList<>(userRepository.findAll().stream().map(this::getUserComplete).toList());
         } else {
            UserEntity user =  userRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//            logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
-            LogDTO logDTO = new LogDTO();
-            logDTO.setDescricao("User " +user.getUsername()+ " found");
-            logDTO.setTipoLog(TipoLog.USER);
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
             return new ArrayList<>(userRepository.findAllById(Collections.singleton(id)).stream().map(this::getUserComplete).toList());
         }
     }
 
     public List<UserDTOWithoutPassword> listMatchesOfTheLogedUser() throws RegraDeNegocioException, JsonProcessingException {
         UserEntity user = userRepository.findById(getIdUserLoged()).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +user.getUsername()+ " found");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " found");
         return userRepository.listMatchesByUserId(getIdUserLoged()).stream()
                 .map(userEntity -> objectMapper.convertValue(userEntity, UserDTOWithoutPassword.class)).toList();
     }
 
     public void deleteUserLoged() throws RegraDeNegocioException, JsonProcessingException {
         UserEntity user = userRepository.findById(getIdUserLoged()).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " deleted");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setDescricao("User " +user.getUsername()+ " deleted");
-        logDTO.setTipoLog(TipoLog.USER);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.USER,"User " +user.getUsername()+ " deleted");
         userRepository.deleteById(user.getUserId());
     }
 
@@ -243,12 +174,7 @@ public class UserService {
                     availableUsers.add(user);
                 }
             }
-//            logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " found");
-            LogDTO logDTO = new LogDTO();
-            logDTO.setDescricao("User " +userEntity.getUsername()+ " found");
-            logDTO.setTipoLog(TipoLog.USER);
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.USER,"User " +userEntity.getUsername()+ " found");
             return availableUsers.stream().map(user -> objectMapper.convertValue(user, UserDTOWithoutPassword.class))
                     .collect(Collectors.toList());
         }catch (Exception e){
@@ -263,12 +189,7 @@ public class UserService {
         if(userLoged.getRole().equals(userRole)){
             throw new RegraDeNegocioException("Você ja tem esse plano");
         }else {
-//            logService.logPost(TipoLog.USER,"User " +userLoged.getUsername()+ " role changed");
-            LogDTO logDTO = new LogDTO();
-            logDTO.setDescricao("User " +userLoged.getUsername()+ " role changed");
-            logDTO.setTipoLog(TipoLog.USER);
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.USER,"User " +userLoged.getUsername()+ " role changed");
             userLoged.setRole(userRole);
             userRepository.save(userLoged);
         }

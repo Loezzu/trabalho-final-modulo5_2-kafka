@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tindev.tindevapi.dto.address.AddressCreateDTO;
 import com.tindev.tindevapi.entities.AddressEntity;
 import com.tindev.tindevapi.repository.AddressRepository;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.service.AddressService;
 import com.tindev.tindevapi.service.LogService;
 import com.tindev.tindevapi.service.UserService;

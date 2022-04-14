@@ -16,7 +16,7 @@ import com.tindev.tindevapi.repository.AddressRepository;
 import com.tindev.tindevapi.repository.PersonInfoRepository;
 import com.tindev.tindevapi.repository.RoleRepository;
 import com.tindev.tindevapi.repository.UserRepository;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.service.AddressService;
 import com.tindev.tindevapi.service.LogService;
 import com.tindev.tindevapi.service.UserService;

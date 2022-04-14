@@ -7,7 +7,7 @@ import com.tindev.tindevapi.dto.match.MatchDTO;
 import com.tindev.tindevapi.entities.MatchEntity;
 import com.tindev.tindevapi.entities.UserEntity;
 import com.tindev.tindevapi.enums.TipoLog;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.repository.MatchRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,12 +25,7 @@ public class MatchService {
     private final LogService logService;
 
     public List<MatchDTO> list() throws JsonProcessingException {
-//        logService.logPost(TipoLog.MATCH,"Match list found");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.MATCH);
-        logDTO.setDescricao("Match list found");
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.MATCH,"Match list found");
         return matchRepository.findAll()
                 .stream()
                 .map(match -> objectMapper.convertValue(match, MatchDTO.class))
@@ -39,12 +34,7 @@ public class MatchService {
 
     public List<MatchDTO> listByUserId(Integer userid) throws RegraDeNegocioException, JsonProcessingException {
         userService.getUserById(userid);
-//        logService.logPost(TipoLog.MATCH,"Matches with user ID: " + userid);
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.MATCH);
-        logDTO.setDescricao("Matches with user ID: " + userid);
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.MATCH,"Matches with user ID: " + userid);
         return matchRepository.findByMatchedUserFirstOrAndMatchedUserSecond(userid)
                 .stream()
                 .map(match -> objectMapper.convertValue(match, MatchDTO.class))
@@ -65,12 +55,7 @@ public class MatchService {
             match.setNameSecond(userService.getUserById(userid2).getUsername());
             match.setUserEntityFirst(objectMapper.convertValue(userService.getUserById(userid1), UserEntity.class));
             match.setUserEntitySecond(objectMapper.convertValue(userService.getUserById(userid2), UserEntity.class));
-//            logService.logPost(TipoLog.MATCH, "Match between user with ID " + userid1 + " and " + userid2);
-            LogDTO logDTO = new LogDTO();
-            logDTO.setTipoLog(TipoLog.MATCH);
-            logDTO.setDescricao("Match between user with ID " + userid1 + " and " + userid2);
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.MATCH, "Match between user with ID " + userid1 + " and " + userid2);
             return objectMapper.convertValue(matchRepository.save(match), MatchDTO.class);
         } else {
             throw new RegraDeNegocioException("Didn't match this time!");
@@ -79,12 +64,7 @@ public class MatchService {
 
     public void deleteMatch(Integer matchId) throws Exception {
         matchRepository.findById(matchId).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.MATCH,"Match with ID: " +matchId + " deleted!");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.MATCH);
-        logDTO.setDescricao("Match with ID: " +matchId + " deleted!");
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.MATCH,"Match with ID: " +matchId + " deleted!");
         matchRepository.deleteById(matchId);
     }
 

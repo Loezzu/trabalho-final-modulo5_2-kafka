@@ -7,11 +7,10 @@ import com.tindev.tindevapi.dto.address.AddressDTO;
 import com.tindev.tindevapi.dto.log.LogDTO;
 import com.tindev.tindevapi.entities.AddressEntity;
 import com.tindev.tindevapi.enums.TipoLog;
-import com.tindev.tindevapi.repository.exceptions.RegraDeNegocioException;
+import com.tindev.tindevapi.exceptions.RegraDeNegocioException;
 import com.tindev.tindevapi.repository.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,24 +29,14 @@ public class AddressService {
     public List<AddressDTO> listAddress(Integer id) throws RegraDeNegocioException, JsonProcessingException {
         if(id != null){
             AddressEntity address = addressRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//            logService.logPost(TipoLog.ADDRESS,"Address "+ address.getIdAddress() +" listed");
-            LogDTO logDTO = new LogDTO();
-            logDTO.setTipoLog(TipoLog.ADDRESS);
-            logDTO.setDescricao("Address "+ address.getIdAddress() +" listed");
-            logService.logPost(logDTO);
-
+            logService.logPost(TipoLog.ADDRESS,"Address "+ address.getIdAddress() +" listed");
             return addressRepository.findById(id)
                     .stream().map(
                             addressEntity -> objectMapper.convertValue(
                                     addressEntity, AddressDTO.class))
                     .collect(Collectors.toList());
         }
-//        logService.logPost(TipoLog.ADDRESS,"Address listed");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.ADDRESS);
-        logDTO.setDescricao("Address listed");
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.ADDRESS,"Address listed");
         return addressRepository.findAll()
                 .stream()
                 .map(address -> objectMapper.convertValue(address, AddressDTO.class))
@@ -58,12 +47,7 @@ public class AddressService {
     public AddressDTO createAddress(AddressCreateDTO addressCreateDTO) throws JsonProcessingException {
         AddressEntity addressEntity = objectMapper.convertValue(addressCreateDTO, AddressEntity.class);
         AddressEntity savedAddressEntity = addressRepository.save(addressEntity);
-
-//        logService.logPost(TipoLog.ADDRESS,"Address "+ addressEntity.getIdAddress() +" created");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.ADDRESS);
-        logDTO.setDescricao("Address "+ addressEntity.getIdAddress() +" created");
-        logService.logPost(logDTO);
+        logService.logPost(TipoLog.ADDRESS,"Address "+ addressEntity.getIdAddress() +" created");
         return objectMapper.convertValue(savedAddressEntity, AddressDTO.class);
     }
 
@@ -77,32 +61,19 @@ public class AddressService {
         addressEntity.setCity(addressCreateDTO.getCity());
         addressEntity.setCep(addressCreateDTO.getCep());
 
-//        logService.logPost(TipoLog.ADDRESS,"Address "+ addressEntity.getIdAddress() +" updated");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.ADDRESS);
-        logDTO.setDescricao("Address "+ addressEntity.getIdAddress() +" updated");
-        logService.logPost(logDTO);
-
+        logService.logPost(TipoLog.ADDRESS,"Address "+ addressEntity.getIdAddress() +" updated");
         return objectMapper.convertValue((addressRepository.save(addressEntity)), AddressDTO.class);
     }
 
     public void deleteAddress(Integer id) throws RegraDeNegocioException, JsonProcessingException {
        AddressEntity addressEntity = addressRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("ID not found"));
-//        logService.logPost(TipoLog.ADDRESS,"Address "+ addressEntity.getIdAddress() +" deleted");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.ADDRESS);
-        logDTO.setDescricao("Address "+ addressEntity.getIdAddress() +" deleted");
-        logService.logPost(logDTO);
+        logService.logPost(TipoLog.ADDRESS,"Address "+ addressEntity.getIdAddress() +" deleted");
         addressRepository.deleteById(id);
     }
 
     public AddressDTO getLogedUserAddress() throws RegraDeNegocioException, JsonProcessingException {
         AddressEntity address = userService.getLogedUser().getAddress();
-//        logService.logPost(TipoLog.ADDRESS,"Address "+ address.getIdAddress() +" listed");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.ADDRESS);
-        logDTO.setDescricao("Address "+ address.getIdAddress() +" listed");
-        logService.logPost(logDTO);
+        logService.logPost(TipoLog.ADDRESS,"Address "+ address.getIdAddress() +" listed");
         return objectMapper.convertValue(address, AddressDTO.class);
 
     }
@@ -113,11 +84,7 @@ public class AddressService {
         address.setNumber(addressCreateDTO.getNumber());
         address.setCity(addressCreateDTO.getCity());
         address.setCep(addressCreateDTO.getCep());
-//        logService.logPost(TipoLog.ADDRESS,"Address "+ address.getIdAddress() +" updated");
-        LogDTO logDTO = new LogDTO();
-        logDTO.setTipoLog(TipoLog.ADDRESS);
-        logDTO.setDescricao("Address "+ address.getIdAddress() +" updated");
-        logService.logPost(logDTO);
+        logService.logPost(TipoLog.ADDRESS,"Address "+ address.getIdAddress() +" updated");
         return objectMapper.convertValue(addressRepository.save(address), AddressDTO.class);
     }
 }

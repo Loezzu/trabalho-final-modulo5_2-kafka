@@ -1,5 +1,6 @@
 package com.tindev.tindevapi.controller.match;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tindev.tindevapi.dto.match.MatchDTO;
 import com.tindev.tindevapi.service.MatchService;
 import io.swagger.annotations.Api;
@@ -19,7 +20,7 @@ public class MatchController implements MatchAPI{
     private final MatchService matchService;
 
     @GetMapping
-    public ResponseEntity<List<MatchDTO>> list() {
+    public ResponseEntity<List<MatchDTO>> list() throws JsonProcessingException {
         return ResponseEntity.ok(matchService.list());
     }
 

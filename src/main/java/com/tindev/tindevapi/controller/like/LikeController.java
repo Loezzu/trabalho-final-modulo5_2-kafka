@@ -1,5 +1,6 @@
 package com.tindev.tindevapi.controller.like;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tindev.tindevapi.dto.like.LikeDTO;
 import com.tindev.tindevapi.service.LikeService;
 import io.swagger.annotations.Api;
@@ -19,7 +20,7 @@ public class LikeController implements LikeAPI{
     private LikeService likeService;
 
     @GetMapping
-    public ResponseEntity<List<LikeDTO>> listLikes(){
+    public ResponseEntity<List<LikeDTO>> listLikes() throws JsonProcessingException {
         return ResponseEntity.ok(likeService.listAllLikes());
     }
 
