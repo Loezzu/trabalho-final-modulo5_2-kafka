@@ -2,6 +2,7 @@ package com.tindev.tindevapi.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tindev.tindevapi.dto.contact.ContactCreateDTO;
 import com.tindev.tindevapi.dto.log.LogDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,15 +26,23 @@ public class ProdutorService {
     private final KafkaTemplate<String,String> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
-    @Value(value = "${kafka.topic.teste}")
-    private String topic;
+    @Value(value = "${kafka.topic.log}")
+    private String topicLog;
+
+    @Value(value = "${kafka.topic.contato}")
+    private String topicContato;
 
     public void enviarLog(LogDTO logDTO) throws JsonProcessingException {
         String payload = objectMapper.writeValueAsString(logDTO);
-        send(payload);
+        send(payload, topicLog);
     }
 
-    private void send(String mensagem) {
+    public void enviarContato(ContactCreateDTO contato) throws JsonProcessingException {
+        String payload = objectMapper.writeValueAsString(contato);
+        send(payload, topicContato);
+    }
+
+    private void send(String mensagem, String topic) {
         Message<String> message = MessageBuilder.withPayload(mensagem)
                 .setHeader(KafkaHeaders.TOPIC, topic)
                 .setHeader(KafkaHeaders.MESSAGE_KEY, UUID.randomUUID().toString())
