@@ -1,55 +1,66 @@
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\service\UserService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\like\LikeController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\service\AddressService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\config\ConfigurationCors.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\address\AddressDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\user\UserDTOWithoutPassword.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\repository\LikeRepository.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\service\LikeService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\personinfo\PersonInfoController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\entities\RoleEntity.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\auth\AuthController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\entities\UserEntity.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\auth\AuthAPI.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\exceptions\CustomGlobalExceptionHandler.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\exceptions\RegraDeNegocioException.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\user\UserDTOCompleto.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\security\TokenService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\personInfo\PersonInfoDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\repository\MatchRepository.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\like\LikeAPI.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\TindevApiApplication.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\match\MatchController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\like\LikeDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\address\AddressAPI.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\match\MatchAPI.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\enums\Pref.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\entities\LikeEntity.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\personinfo\PersonInfoAPI.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\enums\Roles.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\repository\RoleRepository.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\config\SwaggerController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\user\UserDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\repository\UserRepository.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\userAPI\UserController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\service\PersonInfoService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\entities\MatchEntity.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\match\MatchDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\entities\PersonInfoEntity.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\user\UserUpdateDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\enums\ProgLangs.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\repository\AddressRepository.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\security\AuthenticationService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\user\UserCreateDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\enums\Gender.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\userAPI\UserAPI.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\security\TokenAuthenticationFilter.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\address\AddressCreateDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\security\WebSecurityConfig.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\repository\PersonInfoRepository.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\config\SpringFoxConfig.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\auth\LoginDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\controller\address\AddressController.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\dto\personInfo\PersonInfoCreateDTO.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\service\MatchService.java
-C:\Users\PICHAU\Documents\DBC\VEM SER TRAB MODULO MONGO-DB\trabalho-final-modulo4-mongodb\src\main\java\com\tindev\tindevapi\entities\AddressEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\auth\AuthController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\match\MatchController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\entities\LikeEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\entities\UserEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\repository\AddressRepository.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\match\MatchDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\user\UserCreateDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\personInfo\PersonInfoCreateDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\repository\RoleRepository.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\like\LikeController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\personinfo\PersonInfoAPI.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\config\SwaggerController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\ControllerTesteKafka.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\PersonInfoService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\entities\AddressEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\user\UserUpdateDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\entities\MatchEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\TindevApiApplication.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\entities\RoleEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\repository\LikeRepository.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\config\ConfigurationCors.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\security\AuthenticationService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\like\LikeAPI.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\exceptions\CustomGlobalExceptionHandler.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\enums\Roles.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\repository\MatchRepository.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\match\MatchAPI.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\like\LikeDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\entities\PersonInfoEntity.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\enums\TipoLog.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\repository\UserRepository.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\auth\LoginDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\config\SpringFoxConfig.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\ProdutorService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\config\KafkaProducerConfig.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\contact\ContactCreateDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\auth\AuthAPI.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\user\UserDTOCompleto.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\personInfo\PersonInfoDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\ContactService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\enums\Tipo.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\address\AddressController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\user\UserDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\contact\ContactController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\exceptions\RegraDeNegocioException.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\userAPI\UserController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\address\AddressDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\security\WebSecurityConfig.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\user\UserDTOWithoutPassword.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\security\TokenAuthenticationFilter.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\LikeService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\MatchService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\userAPI\UserAPI.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\enums\ProgLangs.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\personinfo\PersonInfoController.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\controller\address\AddressAPI.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\repository\PersonInfoRepository.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\UserService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\log\LogDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\dto\address\AddressCreateDTO.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\AddressService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\security\TokenService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\enums\Pref.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\enums\Gender.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\service\LogService.java
+D:\DBC\eu\trabalho-final-modulo5_2-kafka\src\main\java\com\tindev\tindevapi\config\SimpleErrorDecode.java
