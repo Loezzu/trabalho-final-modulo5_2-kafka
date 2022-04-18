@@ -2,6 +2,7 @@ package com.tindev.tindevapi.controller.log;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tindev.tindevapi.dto.log.LogDTO;
+import com.tindev.tindevapi.service.LogService;
 import com.tindev.tindevapi.service.ProdutorService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
@@ -16,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "6 - Log API", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"6 - Log API"})
 public class LogController {
 
-    private final ProdutorService produtorService;
+    private final LogService logService;
 
     @PostMapping("/registro")
     private void enviar(LogDTO logDTO) throws JsonProcessingException {
-        produtorService.enviarLog(logDTO);
+        logService.logPost(logDTO.getTipoLog(), logDTO.getDescricao());
     }
 
 }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Log
 public class LogService {
 
-    private ProdutorService produtorService;
+    private final ProdutorService produtorService;
 
     public void logPost(TipoLog tipoLog, String mensagem) throws JsonProcessingException {
         LogDTO log = LogDTO.builder()
