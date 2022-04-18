@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/log")
 @RequiredArgsConstructor
 @Api(value = "6 - Log API", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"6 - Log API"})
-public class LogController {
+public class LogController implements LogAPI{
 
     private final LogService logService;
 
     @PostMapping("/registro")
-    private void enviar(LogDTO logDTO) throws JsonProcessingException {
+    public void enviar(LogDTO logDTO) throws JsonProcessingException {
         logService.logPost(logDTO.getTipoLog(), logDTO.getDescricao());
     }
 

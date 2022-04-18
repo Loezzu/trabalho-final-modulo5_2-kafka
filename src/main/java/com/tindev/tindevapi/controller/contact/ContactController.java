@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/contato")
 @RequiredArgsConstructor
 @Api(value = "7 - Contact API", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"7 - Contact API"})
-public class ContactController {
+public class ContactController implements ContactAPI{
 
     private final ContactService contactService;
 
