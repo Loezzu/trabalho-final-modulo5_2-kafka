@@ -1,5 +1,6 @@
 package com.tindev.tindevapi.repository;
 
+import com.tindev.tindevapi.entities.RoleEntity;
 import com.tindev.tindevapi.entities.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -25,6 +26,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
     Optional<UserEntity> findByUsername(String username);
 
-
+    List<UserEntity> findByRole(RoleEntity role);
 
 }

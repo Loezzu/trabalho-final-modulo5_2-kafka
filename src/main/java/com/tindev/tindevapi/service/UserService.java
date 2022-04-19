@@ -19,6 +19,7 @@ import com.tindev.tindevapi.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -40,9 +41,18 @@ public class UserService {
     private final RoleRepository roleRepository;
     private final ObjectMapper objectMapper;
     private final LogService logService;
+    private final EmailService emailService;
 
     public Optional<UserEntity> findByUsername(String username) throws RegraDeNegocioException {
         return Optional.ofNullable(userRepository.findByUsername(username).orElseThrow(() -> new RegraDeNegocioException("User not found")));
+    }
+
+    @Scheduled(cron = "0 0 0 1 * *")
+    private void sendEmailUsuariosFree(){
+        List<UserEntity> userEntities = userRepository.findByRole(new RoleEntity(1, "ROLE_FREE"));
+        for (UserEntity usuario : userEntities){
+            emailService.sendSimpleMessage(usuario);
+        }
     }
 
     public List<UserDTO> listUsers(Integer id) throws RegraDeNegocioException, JsonProcessingException {
